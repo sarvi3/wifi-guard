@@ -30,7 +30,13 @@ gemini_client = genai.Client(api_key=GEMINI_API_KEY)
 
 
 # Enable CORS for the frontend running on localhost
-CORS(app, origins=['http://localhost:5173', 'http://localhost:8080', 'http://127.0.0.1:5173', 'http://127.0.0.1:8080'], supports_credentials=False)
+CORS(app, origins=[
+    'http://localhost:5173',
+    'http://localhost:8080',
+    'http://127.0.0.1:5173',
+    'http://127.0.0.1:8080',
+    'https://wifi-guard-frontend-production.up.railway.app'
+], supports_credentials=False)
 
 # Global threat monitor instance
 threat_monitor = ThreatMonitor()
