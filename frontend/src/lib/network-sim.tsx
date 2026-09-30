@@ -756,9 +756,7 @@ class NetworkEngine {
 
   private syncBackendThreats = async () => {
     try {
-      const response = await fetch(
-        "http://127.0.0.1:49500/threat-events?limit=10",
-      );
+      const response = await fetch("https://wifi-guard-production.up.railway.app/threat-events?limit=10");
 
       if (!response.ok) return;
 

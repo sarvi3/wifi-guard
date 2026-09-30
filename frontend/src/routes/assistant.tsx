@@ -193,7 +193,7 @@ function Assistant() {
 
 
     try {
-      const response = await fetch("http://127.0.0.1:49500/ai/chat", {
+      const response = await fetch("https://wifi-guard-production.up.railway.app/ai/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -44,7 +44,7 @@ function HealthPage() {
           setLoading(true);
         }
         setError(null);
-        const response = await fetch('http://127.0.0.1:49500/network-health');
+        const response = await fetch('https://wifi-guard-production.up.railway.app/network-health');
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

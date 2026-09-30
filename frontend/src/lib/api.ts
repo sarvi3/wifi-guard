@@ -5,7 +5,7 @@
  * and the Flask backend. It provides type-safe methods for each endpoint.
  */
 
-const API_BASE_URL = 'http://127.0.0.1:49500';
+const API_BASE_URL = 'https://wifi-guard-production.up.railway.app';
 
 export interface Device {
   ip: string;

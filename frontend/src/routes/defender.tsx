@@ -253,7 +253,7 @@ function Defender() {
   // Fetch threat status
   const fetchThreatStatus = useCallback(async () => {
     try {
-      const response = await fetch('http://127.0.0.1:49500/threat-status');
+      const response = await fetch('https://wifi-guard-production.up.railway.app/threat-status');
       if (response.ok) {
         const data = await response.json();
         setThreatStatus(data);
@@ -268,7 +268,7 @@ function Defender() {
   // Fetch threat events
   const fetchThreatEvents = useCallback(async () => {
     try {
-      const response = await fetch('http://127.0.0.1:49500/threat-events?limit=10');
+      const response = await fetch('https://wifi-guard-production.up.railway.app/threat-events?limit=10');
       if (response.ok) {
         const data = await response.json();
         setThreatEvents(data.events || []);
@@ -281,7 +281,7 @@ function Defender() {
   const fetchBlockedWebsites = useCallback(async () => {
     try {
       const response = await fetch(
-        "http://127.0.0.1:49500/blocked-websites"
+        "https://wifi-guard-production.up.railway.app/blocked-websites"
       );
 
       if (response.ok) {
@@ -296,7 +296,7 @@ function Defender() {
   // Fetch device statistics
   const fetchDeviceStats = useCallback(async (ip: string) => {
     try {
-      const response = await fetch(`http://127.0.0.1:49500/device-stats?ip=${encodeURIComponent(ip)}`);
+      const response = await fetch(`https://wifi-guard-production.up.railway.app/device-stats?ip=${encodeURIComponent(ip)}`);
       if (response.ok) {
         const data = await response.json();
         // Set deviceStats if the device was found in monitoring data
@@ -338,7 +338,7 @@ function Defender() {
   const startMonitoring = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://127.0.0.1:49500/start-monitoring', {
+      const response = await fetch('https://wifi-guard-production.up.railway.app/start-monitoring', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
       });
@@ -359,7 +359,7 @@ function Defender() {
   const stopMonitoring = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://127.0.0.1:49500/stop-monitoring', {
+      const response = await fetch('https://wifi-guard-production.up.railway.app/stop-monitoring', {
         method: 'POST',
       });
       if (response.ok) {
@@ -461,7 +461,7 @@ function Defender() {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:49500/threat-explanation",
+        "https://wifi-guard-production.up.railway.app/threat-explanation",
         {
           method: "POST",
           headers: {
@@ -558,7 +558,7 @@ function Defender() {
                     !activeAlert.hostname.includes(":")
                       ? activeAlert.hostname
                       : getThreatDestinationLabel(activeAlert);
-                  const response = await fetch("http://127.0.0.1:49500/block-website", {
+                  const response = await fetch("https://wifi-guard-production.up.railway.app/block-website", {
                     method: "POST",
                     headers: {
                       "Content-Type": "application/json",
@@ -600,7 +600,7 @@ function Defender() {
 
                 try {
                   const response = await fetch(
-                    "http://127.0.0.1:49500/unblock-website",
+                    "https://wifi-guard-production.up.railway.app/unblock-website",
                     {
                       method: "POST",
                       headers: {
@@ -655,7 +655,7 @@ function Defender() {
                   onClick={async () => {
                     try {
                       const response = await fetch(
-                        "http://127.0.0.1:49500/unblock-website",
+                        "https://wifi-guard-production.up.railway.app/unblock-website",
                         {
                           method: "POST",
                           headers: {
