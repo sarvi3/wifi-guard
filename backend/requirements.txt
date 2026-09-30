@@ -1,6 +1,8 @@
 Flask
 flask-cors
-scapy
-requests
 python-dotenv
+scapy
 psutil
+mac-vendor-lookup
+requests
+google-genai
