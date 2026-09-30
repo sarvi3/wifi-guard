@@ -3,3 +3,4 @@ flask-cors
 scapy
 requests
 python-dotenv
+psutil
